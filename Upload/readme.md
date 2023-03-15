@@ -1,4 +1,4 @@
-# UPLOAD 
+# UPLOAD FILE
 
 For upload any file in Laravel 9 following this steps:
 
