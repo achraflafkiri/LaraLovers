@@ -23,47 +23,64 @@ DB_PASSWORD=password
 
 4 - Create a Model:
 **_Models are used to represent database tables. We can create a model using the following command_**
-php artisan make:model Task -m
+```
+    php artisan make:model Task -m
+```
+
 This command creates a **model** named Task with a **migration** file
 
 5 - Create a Migration:
 **_Migrations are used to create database tables. We can create a migration using the following command:_**
+
+```
 php artisan make:migration create_tasks_table
+```
+
 This command creates a **migration** file named **create_tasks_table**
 
 6 - Define the Database Schema:
 **_In the migration file, we need to define the database schema for the tasks table. Here's an example:_**
+
+```
     Schema::create('tasks', function (Blueprint $table) {
     $table->id();
     $table->string('title');
     $table->text('description');
     $table->timestamps();
     });
+```
+
 This code creates a **tasks table** with id, title, description, and timestamps columns.
 
 7 - Run Migrations:
 **_We need to run the migration to create the tasks table in the database. We can run the migration using the following command:_**
-
+```
     php artisan migrate
+```
 
 8 - Create a Controller:
 **_Controllers are used to handle user requests. We can create a controller using the following command:_**
 
+```
     php artisan make:controller TaskController
+```
 
 This command creates a controller named TaskController.
 
 9 - Define Routes:
 **_Routes are used to map user requests to controller methods. We can define a route for the create task form using the following code in the routes/web.php file:_**
 
+```
     Route::get('/tasks/create', [TaskController::class, 'create']);
     Route::post('/tasks', [TaskController::class, 'store']);
+```
 
 This code defines two routes: one for the create task form and one for storing the task data.
 
 10 - Define Controller Methods:
 **_In the TaskController, we need to define two methods: create and store. The create method returns the create task form, and the store method stores the task data in the database. Here's an example:_**
 
+```
     public function create()
     {
         return view('tasks.create');
@@ -78,12 +95,14 @@ This code defines two routes: one for the create task form and one for storing t
 
         return redirect('/tasks');
     }
+```
 
 **_This code defines the create and store methods. The create method returns the create task form, and the store method creates a new task instance, sets its properties using the request data, and saves it to the database._**
 
 11 - Create a View:
 **_Views are used to display the create task form. We can create a view named create.blade.php in the resources/views/tasks directory using the following code:_**
 
+```
     <form method="POST" action="/tasks">
         @csrf
         <div>
@@ -98,7 +117,10 @@ This code defines two routes: one for the create task form and one for storing t
             <button type="submit">Create Task</button>
         </div>
     </form>
+```
 
 12 - Test the Application:
 
-     php artisan serve
+```
+    php artisan serve
+```
