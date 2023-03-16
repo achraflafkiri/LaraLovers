@@ -10,4 +10,4 @@
 * <a href="./database">database</a>
 * <a href="./Upload">Upload File</a>
 * <a href="./Auth">Auth</a>
-
+* <a href="./data_to_database">Insert</a>
