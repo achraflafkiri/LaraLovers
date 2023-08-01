@@ -1,5 +1,4 @@
-# Love laravel
-
+# LaraLovers
 ## available now :
 
 * <a href="./views">views</a>
